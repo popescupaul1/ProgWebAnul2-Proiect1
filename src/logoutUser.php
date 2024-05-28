@@ -1,0 +1,9 @@
+<?php
+    session_start();
+    unset($_SESSION['email']);
+    unset($_SESSION['password']);
+    unset($_COOKIE['email']);
+    unset($_COOKIE['password']);
+    setcookie('email','',time()-60*60*24*365);
+    setcookie('password','',time()-60*60*24*365);
+    header('location:index.php');
